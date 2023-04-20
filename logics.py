@@ -1,3 +1,6 @@
+import random
+
+
 def print_arr(mas):
     for row in mas:
         print(*row)
@@ -36,3 +39,18 @@ def to_the_left(mas):
                     mas[i].pop(j + 1)
                     mas[i].append(0)
     return mas
+
+
+def rand_2_4(mas, x, y):
+    if random.random() <= 0.75:
+        mas[x][y] = 2
+    else:
+        mas[x][y] = 4
+    return mas
+
+
+def zero_in_mas(mas):
+    for row in mas:
+        if 0 in row:
+            return True
+    return False
