@@ -73,6 +73,9 @@ while zero_in_mas(mas):
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 mas = to_the_left(mas)
+            elif event.key == pygame.K_RIGHT:
+                mas = to_the_right(mas)
+
 
             empty = empty_list(mas)
 
