@@ -171,3 +171,37 @@ class Test_512(unittest.TestCase):
         ]
 
         self.assertEqual(to_the_upstairs(mas), rez_mas)
+
+    def test_move_downstairs_1(self):
+        mas = [
+            [2, 0, 8, 2],
+            [2, 16, 0, 0],
+            [0, 16, 8, 0],
+            [0, 32, 16, 2],
+        ]
+
+        rez_mas = [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 32, 16, 0],
+            [4, 32, 16, 4],
+        ]
+
+        self.assertEqual(to_the_downstairs(mas), rez_mas)
+
+    def test_move_downstairs_2(self):
+        mas = [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        rez_mas = [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        self.assertEqual(to_the_downstairs(mas), rez_mas)

@@ -40,7 +40,6 @@ TITLE_REC = pygame.Rect(0, 0, WIDTH, 110)
 
 
 def drawing():
-
     font = pygame.font.SysFont("Calibre", 70)
     print_arr(mas)
     for row in range(BLOCK):
@@ -77,8 +76,8 @@ while zero_in_mas(mas):
                 mas = to_the_right(mas)
             elif event.key == pygame.K_UP:
                 mas = to_the_upstairs(mas)
-
-
+            elif event.key == pygame.K_DOWN:
+                mas = to_the_downstairs(mas)
 
             empty = empty_list(mas)
 

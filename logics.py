@@ -25,11 +25,13 @@ def get_index_from_number(num):
     x, y = num // 4, num % 4
     return x, y
 
+
 def zero_in_mas(mas):
     for row in mas:
         if 0 in row:
             return True
     return False
+
 
 def to_the_left(mas):
     for row in mas:
@@ -67,13 +69,31 @@ def to_the_upstairs(mas):
         for i in range(4):
             if mas[i][j] != 0:
                 column.append(mas[i][j])
-        while(len(column)) != 4:
+        while (len(column)) != 4:
             column.append(0)
         for i in range(3):
-            if column[i] == column[i+1] and column[i] != 0:
+            if column[i] == column[i + 1] and column[i] != 0:
                 column[i] *= 2
-                column.pop(i+1)
+                column.pop(i + 1)
                 column.append(0)
+        for i in range(4):
+            mas[i][j] = column[i]
+    return mas
+
+
+def to_the_downstairs(mas):
+    for j in range(4):
+        column = []
+        for i in range(4):
+            if mas[i][j] != 0:
+                column.append(mas[i][j])
+        while(len(column)) != 4:
+            column.insert(0, 0)
+        for i in range(3, 0, -1):
+            if column[i] == column[i-1] and column[i] != 0:
+                column[i] *= 2
+                column.pop(i-1)
+                column.insert(0, 0)
         for i in range(4):
             mas[i][j] = column[i]
     return mas
@@ -85,6 +105,3 @@ def rand_2_4(mas, x, y):
     else:
         mas[x][y] = 4
     return mas
-
-
-
