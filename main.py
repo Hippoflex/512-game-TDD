@@ -75,6 +75,9 @@ while zero_in_mas(mas):
                 mas = to_the_left(mas)
             elif event.key == pygame.K_RIGHT:
                 mas = to_the_right(mas)
+            elif event.key == pygame.K_UP:
+                mas = to_the_upstairs(mas)
+
 
 
             empty = empty_list(mas)

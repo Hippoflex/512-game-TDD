@@ -86,7 +86,6 @@ class Test_512(unittest.TestCase):
 
         self.assertEqual(to_the_left(mas), rez_mas)
 
-
     def test_move_right_1(self):
         mas = [
             [8, 8, 0, 0],
@@ -120,3 +119,37 @@ class Test_512(unittest.TestCase):
         ]
 
         self.assertEqual(to_the_right(mas), rez_mas)
+
+    def test_move_upstairs_1(self):
+        mas = [
+            [8, 4, 16, 2],
+            [8, 4, 16, 0],
+            [0, 2, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        rez_mas = [
+            [16, 8, 32, 2],
+            [0, 2, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        self.assertEqual(to_the_upstairs(mas), rez_mas)
+
+    def test_move_upstairs_2(self):
+        mas = [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        rez_mas = [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        self.assertEqual(to_the_upstairs(mas), rez_mas)

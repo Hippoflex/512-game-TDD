@@ -56,6 +56,24 @@ def to_the_right(mas):
     return mas
 
 
+def to_the_upstairs(mas):
+    for j in range(4):
+        column = []
+        for i in range(4):
+            if mas[i][j] != 0:
+                column.append(mas[i][j])
+        while(len(column)) != 4:
+            column.append(0)
+        for i in range(3):
+            if column[i] == column[i+1] and column[i] != 0:
+                column[i] *= 2
+                column.pop(i+1)
+                column.append(0)
+        for i in range(4):
+            mas[i][j] = column[i]
+    return mas
+
+
 def rand_2_4(mas, x, y):
     if random.random() <= 0.75:
         mas[x][y] = 2
