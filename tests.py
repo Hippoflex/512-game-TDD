@@ -52,6 +52,24 @@ class Test_512(unittest.TestCase):
     def test_get_index_from_number_3(self):
         self.assertEqual(get_index_from_number(5), (1, 0))
 
+    def test_zero_in_mas_1(self):
+        mas = [
+            [1, 1, 1, 1],
+            [1, 1, 0, 1],
+            [1, 1, 1, 1],
+            [1, 1, 1, 1],
+        ]
+        self.assertEqual(zero_in_mas(mas), True)
+
+    def test_zero_in_mas_2(self):
+        mas = [
+            [1, 1, 1, 1],
+            [1, 1, 1, 1],
+            [1, 1, 1, 1],
+            [1, 1, 1, 1],
+        ]
+        self.assertEqual(zero_in_mas(mas), False)
+
     def test_move_left_1(self):
         mas = [
             [8, 8, 0, 0],

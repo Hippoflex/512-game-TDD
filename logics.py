@@ -25,6 +25,11 @@ def get_index_from_number(num):
     x, y = num // 4, num % 4
     return x, y
 
+def zero_in_mas(mas):
+    for row in mas:
+        if 0 in row:
+            return True
+    return False
 
 def to_the_left(mas):
     for row in mas:
@@ -82,8 +87,4 @@ def rand_2_4(mas, x, y):
     return mas
 
 
-def zero_in_mas(mas):
-    for row in mas:
-        if 0 in row:
-            return True
-    return False
+
